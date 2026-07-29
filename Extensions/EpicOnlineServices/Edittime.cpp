@@ -844,14 +844,14 @@ void WINAPI DLLExport SetPropValue(LPMV mV, LPEDATA edPtr, UINT nPropID, LPVOID 
 	// Gets the pointer to the CPropValue structure
 	const auto pValue = static_cast<CPropValue*>(lParam);
 
-	auto UpdateText = [&] (LPWSTR pText,size_t sz) {
-		const auto pStr = dynamic_cast<CPropWStringValue*>(pValue)->GetString();
-		wcscpy_s(pText, sz,pStr);
+	auto UpdateText = [&] (LPWSTR pText, size_t sz) {
+		const auto pStr = dynamic_cast<CPropStringValue*>(pValue)->GetString();
+		wcscpy_s(pText, sz, pStr);
 	};
 
 	switch (nPropID) {
 	case PROPID_InitializeOptions_AppName_TEXT:
-		UpdateText(edPtr->pAppName, EOS_IDSZ);
+		UpdateText(edPtr->pAppName, 2 * EOS_IDSZ);
 		break;
 	case PROPID_InitializeOptions_AppVersion_TEXT:
 		UpdateText(edPtr->pAppVersion, EOS_IDSZ);
