@@ -86,12 +86,12 @@ typedef struct tagEDATA_V1
 	bool bRequireLauncher;
 	bool bRequireBootstrap;
 
-	bool bAuthPremissions_BasicProfile;
-	bool bAuthPremissions_FriendsList;
-	bool bAuthPremissions_Presence;
-	bool bAuthPremissions_FriendsManagement;
-	bool bAuthPremissions_Email;
-	bool bAuthPremissions_Country;
+	bool bAuthPermissions_BasicProfile;
+	bool bAuthPermissions_FriendsList;
+	bool bAuthPermissions_Presence;
+	bool bAuthPermissions_FriendsManagement;
+	bool bAuthPermissions_Email;
+	bool bAuthPermissions_Country;
 
 	bool bAutoLogin;
 	bool bAutoLogout;

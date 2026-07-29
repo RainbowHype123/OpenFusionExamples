@@ -422,7 +422,7 @@ int WINAPI DLLExport CreateObject(mv _far *mV, fpLevObj loPtr, LPEDATA edPtr)
 		edPtr->sandboxType = SandboxComboListEnum::Dev;
 		edPtr->authType = AuthTypeComboListEnum::ExchangeCode;		
 		
-		edPtr->bAuthPremissions_BasicProfile = true;
+		edPtr->bAuthPermissions_BasicProfile = true;
 
 		edPtr->bRequireLauncher = true;
 		edPtr->bRequireBootstrap = true;
@@ -806,17 +806,17 @@ BOOL WINAPI DLLExport GetPropCheck(LPMV mV, LPEDATA edPtr, UINT nPropID)
 	switch (nPropID) {
 		// Return 0 (unchecked) or 1 (checked)
 	case PROPID_RuntimeOptions_AuthPermissions_BasicProfile_CHECK:
-		return edPtr->bAuthPremissions_BasicProfile;
+		return edPtr->bAuthPermissions_BasicProfile;
 	case PROPID_RuntimeOptions_AuthPermissions_FriendsList_CHECK:
-		return edPtr->bAuthPremissions_FriendsList;
+		return edPtr->bAuthPermissions_FriendsList;
 	case PROPID_RuntimeOptions_AuthPermissions_Presence_CHECK:
-		return edPtr->bAuthPremissions_Presence;
+		return edPtr->bAuthPermissions_Presence;
 	case PROPID_RuntimeOptions_AuthPermissions_FriendsManagement_CHECK:
-		return edPtr->bAuthPremissions_FriendsManagement;
+		return edPtr->bAuthPermissions_FriendsManagement;
 	case PROPID_RuntimeOptions_AuthPermissions_Email_CHECK:
-		return edPtr->bAuthPremissions_Email;
+		return edPtr->bAuthPermissions_Email;
 	case PROPID_RuntimeOptions_AuthPermissions_Country_CHECK:
-		return edPtr->bAuthPremissions_Country;
+		return edPtr->bAuthPermissions_Country;
 
 	case PROPID_RuntimeOptions_RequireLauncher_CHECK:
 		return edPtr->bRequireLauncher;
@@ -914,22 +914,22 @@ void WINAPI DLLExport SetPropCheck(LPMV mV, LPEDATA edPtr, UINT nPropID, BOOL nC
 	{
 
 	case PROPID_RuntimeOptions_AuthPermissions_BasicProfile_CHECK:
-		edPtr->bAuthPremissions_BasicProfile = nCheck;
+		edPtr->bAuthPermissions_BasicProfile = nCheck;
 		break;
 	case PROPID_RuntimeOptions_AuthPermissions_FriendsList_CHECK:
-		edPtr->bAuthPremissions_FriendsList = nCheck;
+		edPtr->bAuthPermissions_FriendsList = nCheck;
 		break;
 	case PROPID_RuntimeOptions_AuthPermissions_Presence_CHECK:
-		edPtr->bAuthPremissions_Presence = nCheck;
+		edPtr->bAuthPermissions_Presence = nCheck;
 		break;
 	case PROPID_RuntimeOptions_AuthPermissions_FriendsManagement_CHECK:
-		edPtr->bAuthPremissions_FriendsManagement = nCheck;
+		edPtr->bAuthPermissions_FriendsManagement = nCheck;
 		break;
 	case PROPID_RuntimeOptions_AuthPermissions_Email_CHECK:
-		edPtr->bAuthPremissions_Email = nCheck;
+		edPtr->bAuthPermissions_Email = nCheck;
 		break;
 	case PROPID_RuntimeOptions_AuthPermissions_Country_CHECK:
-		edPtr->bAuthPremissions_Country = nCheck;
+		edPtr->bAuthPermissions_Country = nCheck;
 		break;
 
 	case PROPID_RuntimeOptions_RequireLauncher_CHECK:

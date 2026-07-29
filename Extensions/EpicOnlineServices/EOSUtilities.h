@@ -45,7 +45,7 @@ struct EOSQueryType {
 
 struct EOSUtilities_RuntimeOptions {
 	EOS_ELoginCredentialType authCredentialsType = EOS_ELoginCredentialType::EOS_LCT_ExchangeCode;
-	EOS_EAuthScopeFlags authPremissions = EOS_EAuthScopeFlags::EOS_AS_NoFlags;
+	EOS_EAuthScopeFlags authPermissions = EOS_EAuthScopeFlags::EOS_AS_NoFlags;
 
 	bool bRequireLauncher = true;
 	bool bRequireBootstrap = true;
@@ -350,7 +350,7 @@ public:
 
 		EOS_Auth_LoginOptions loginOptions{};
 		loginOptions.ApiVersion = EOS_AUTH_LOGIN_API_LATEST;
-		loginOptions.ScopeFlags = runtimeOpt.authPremissions;
+		loginOptions.ScopeFlags = runtimeOpt.authPermissions;
 		loginOptions.Credentials = &authCredentials;
 
 		callbackCounter.CallCallback();

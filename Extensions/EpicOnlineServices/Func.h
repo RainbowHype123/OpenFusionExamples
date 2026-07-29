@@ -16,25 +16,25 @@ inline void EOSLoginDebug(LPRDATA rdPtr) {
 }
 #endif
 
-inline auto GetAuthPremissions(LPEDATA edPtr) {
+inline auto GetAuthPermissions(LPEDATA edPtr) {
 	auto permission = EOS_EAuthScopeFlags::EOS_AS_NoFlags;
 
-	if(edPtr->bAuthPremissions_BasicProfile) {
+	if(edPtr->bAuthPermissions_BasicProfile) {
 		permission |= EOS_EAuthScopeFlags::EOS_AS_BasicProfile;
 	}
-	if (edPtr->bAuthPremissions_FriendsList) {
+	if (edPtr->bAuthPermissions_FriendsList) {
 		permission |= EOS_EAuthScopeFlags::EOS_AS_FriendsList;
 	}
-	if (edPtr->bAuthPremissions_Presence) {
+	if (edPtr->bAuthPermissions_Presence) {
 		permission |= EOS_EAuthScopeFlags::EOS_AS_Presence;
 	}
-	if (edPtr->bAuthPremissions_FriendsManagement) {
+	if (edPtr->bAuthPermissions_FriendsManagement) {
 		permission |= EOS_EAuthScopeFlags::EOS_AS_FriendsManagement;
 	}
-	if (edPtr->bAuthPremissions_Email) {
+	if (edPtr->bAuthPermissions_Email) {
 		permission |= EOS_EAuthScopeFlags::EOS_AS_Email;
 	}
-	if (edPtr->bAuthPremissions_Country) {
+	if (edPtr->bAuthPermissions_Country) {
 		permission |= EOS_EAuthScopeFlags::EOS_AS_Country;
 	}
 
@@ -104,7 +104,7 @@ inline bool GlobalData::EOSInit(LPEDATA edPtr) {
 		runtimeOpt.authCredentialsType = AuthTypeComboListEnumToLoginCredentialType(edPtr->authType);
 	}
 
-	runtimeOpt.authPremissions = GetAuthPremissions(edPtr);
+	runtimeOpt.authPermissions = GetAuthPermissions(edPtr);
 	runtimeOpt.bRequireLauncher = edPtr->bRequireLauncher;
 	runtimeOpt.bRequireBootstrap = edPtr->bRequireBootstrap;
 
