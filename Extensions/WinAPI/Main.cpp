@@ -2015,6 +2015,7 @@ long (WINAPI* ConditionJumps[])(LPRDATA rdPtr, long param1, long param2) =
 	IsObjectHasAnimationInDirection_Scope,
 
 	IsRunningInEditor,
+	IsRunningInSubApp,
 
 	IsActiveAtTop,
 
@@ -2134,6 +2135,8 @@ long (WINAPI* ExpressionJumps[])(LPRDATA rdPtr, long param) =
 	ReturnFullScreen,
 
 	GetFrameName,
+	GetNumberOfFrames,
+	GetNumberOfLayers,
 
 	GetCurTime,
 	GetPlayTime,
